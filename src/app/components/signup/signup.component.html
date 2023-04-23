@@ -1,0 +1,72 @@
+<div class="forms-wrapper">
+  <form #signUpForm="ngForm">
+    <div class="email-wrapper">
+      <label for="">Email</label>
+      <input
+        type="email"
+        placeholder="E-mail"
+        name="email-signup"
+        required
+        [(ngModel)]="email"
+        email
+        #emailSignup="ngModel"
+        autocomplete="off"
+      />
+      <p *ngIf="!emailSignup.valid && emailSignup.touched">
+        Enter valid Email ID
+      </p>
+    </div>
+
+    <div class="phone-wrapper">
+      <label for="">Phone</label>
+      <input
+        type="number"
+        placeholder="Phone Number"
+        name="phone-signup"
+        required
+        [(ngModel)]="phone"
+        #phoneSignup="ngModel"
+        autocomplete="off"
+      />
+      <p *ngIf="!phoneSignup.valid && phoneSignup.touched">
+        Phone Number field cannot be empty
+      </p>
+    </div>
+
+    <div class="user-name-wrapper">
+      <label for="">User Name</label>
+      <input
+        type="text"
+        placeholder="Choose User Name"
+        name="username-signup"
+        required
+        [(ngModel)]="userName"
+        #usernameSignup="ngModel"
+        autocomplete="off"
+      />
+      <p *ngIf="!usernameSignup.valid && usernameSignup.touched">
+        user name field cannot be empty
+      </p>
+    </div>
+
+    <div class="password-wrapper">
+      <label for="">Password</label>
+      <input
+        type="password"
+        placeholder="Password"
+        name="password-signup"
+        required
+        [(ngModel)]="password"
+        #passwordSignup="ngModel"
+        autocomplete="off"
+      />
+      <p *ngIf="!passwordSignup.valid && passwordSignup.touched">
+        Password field cannot be empty
+      </p>
+    </div>
+
+    <button [disabled]="!signUpForm.valid" (click)="getUserDetails()">
+      SignUp
+    </button>
+  </form>
+</div>

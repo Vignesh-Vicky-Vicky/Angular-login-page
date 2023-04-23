@@ -1,0 +1,32 @@
+<div class="forms-wrapper">
+  <form #signInForm="ngForm">
+    <div class="user-name-wrapper">
+      <label for="signInUserName">User Name</label>
+      <input
+        id="signInUserName"
+        type="text"
+        placeholder="User Name" 
+        name="username-login"
+        [(ngModel)]="userCreds.userName"
+        required
+        #usernameLogin="ngModel"
+        autocomplete="off"
+        />
+      <p *ngIf="!usernameLogin.valid && usernameLogin.touched">Please Enter Valid Input</p>
+    </div>
+    <div class="password-wrapper">
+      <label for="signInPassword">Password</label>
+      <input 
+      id="signInPassword"
+      type="password" 
+      placeholder="Password" 
+      name="password-login"
+      [(ngModel)]="userCreds.password"
+      required
+      #passwordLogin="ngModel"
+      />
+      <p *ngIf="!passwordLogin.valid && passwordLogin.touched">Please Enter Valid Input</p>
+    </div>
+    <button class="login-btn" [disabled]="!signInForm.valid" (click)="validateUser()">Login</button>
+  </form>
+</div>

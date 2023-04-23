@@ -1,0 +1,20 @@
+<header class="container">
+    <div class="wrapper">
+        <h1>Login</h1>
+    </div>
+</header>
+
+<div class="container">
+    <div class="wrapper">
+        <div class="forms-group-wrapper">
+            <div class="btns-container">
+                <button [routerLink]="['']" [routerLinkActiveOptions]="{exact:
+                    true}" routerLinkActive="active">Login</button>
+                <button [routerLink]="['/signup']" routerLinkActive="active" >SignUp</button>
+            </div>
+            <div class="form-wrapper">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>
